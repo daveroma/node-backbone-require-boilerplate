@@ -17,6 +17,8 @@ define([
     routes: {
       ''          : 'index',
       'index'     : 'about',
+      'about'     : 'about',
+      'contact'   : 'contact',
       'ping'      : 'ping',
       '*actions'  : 'index'
     },
@@ -24,6 +26,16 @@ define([
     index: function() {
       // the showView method
       ViewManager.showView(ViewManager.homeView);
+    },
+
+    about: function() {
+      // the showView method
+      ViewManager.showView(ViewManager.aboutView);
+    },
+
+    contact: function() {
+      // the showView method
+      ViewManager.showView(ViewManager.contactView);
     },
 
     ping: function() {

@@ -11,18 +11,22 @@ define([
   'router',
   'views/_manager',
   'views/home_view',
+  'views/about_view',
+  'views/contact_view',
   'views/ping_view'
 ],
-function($, _, Backbone, Router, ViewManager, HomeView, PingView) {
+function($, _, Backbone, Router, ViewManager, HomeView, AboutView, ContactView, PingView) {
 
   var BaseView = Backbone.View.extend({
 
     events: {
-      'click .nav-item': 'ping'
+      'click a': 'goToPage'
     },
 
-    ping: function() {
-      Backbone.history.navigate('ping', {trigger: true});
+    goToPage: function(e) {
+      e.preventDefault();
+      var location = e.currentTarget.getAttribute('href');
+      Backbone.history.navigate(location, {trigger: true});
     },
 
     initialize: function() {
@@ -31,6 +35,8 @@ function($, _, Backbone, Router, ViewManager, HomeView, PingView) {
       // other modules like the router.js
       ViewManager.baseView = this;
       ViewManager.homeView = new HomeView();
+      ViewManager.aboutView = new AboutView();
+      ViewManager.contactView = new ContactView();
       ViewManager.pingView = new PingView();
 
     }
