@@ -1,15 +1,9 @@
-/*
-
-Home View
-
-*/
-
 define([
   'jquery',
   'underscore',
   'backbone',
   'text!templates/home_view.html'
-],function($, _, Backbone, homeViewTemplate) {
+], function($, _, Backbone, homeViewTemplate) {
 
   var HomeView = Backbone.View.extend({
 
@@ -23,22 +17,6 @@ define([
       this.$el.html(this.homeTemplate);
       setTimeout(self.typeOut(40), 2500);
       return this;
-    },
-
-    typeOut: function(speed) {
-      var i = 0;
-      var $letters = this.$el.find('span');
-      var $cursor = this.$el.find('.cursor');
-
-      $cursor.removeClass('blink');
-
-      var type = setInterval(function() {
-        $($letters.get(i)).addClass('visible');
-        if(++i == $letters.length) {
-          clearInterval(type);
-          $cursor.addClass('blink');
-        }
-      }, speed);
     }
 
   });

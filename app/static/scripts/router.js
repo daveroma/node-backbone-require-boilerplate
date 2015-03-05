@@ -1,10 +1,3 @@
-/*
-
-Main application
-
-*/
-
-
 define([
   'jquery',
   'underscore',

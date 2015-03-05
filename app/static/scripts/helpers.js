@@ -1,23 +1,25 @@
-define([$], function(){
+define([
+  'jquery',
+  'underscore',
+  'backbone'
+], function($, _, Backbone){
 
-  return {
+  Backbone.View.prototype.typeOut = function(speed) {
 
-    typeOut: function(speed) {
-      var i = 0;
-      var $letters = this.$el.find('span');
-      var $cursor = this.$el.find('.cursor');
+    console.log('extended');
 
-      $cursor.removeClass('blink');
+    var i = 0;
+    var $letters = this.$el.find('span');
+    var $cursor = this.$el.find('.cursor');
 
-      var type = setInterval(function() {
-        $($letters.get(i)).addClass('visible');
-        if(++i == $letters.length) {
-          clearInterval(type);
-          $cursor.addClass('blink');
-        }
-      }, speed);
-    }
+    $cursor.removeClass('blink');
 
+    var type = setInterval(function() {
+      $($letters.get(i)).addClass('visible');
+      if(++i == $letters.length) {
+        clearInterval(type);
+        $cursor.addClass('blink');
+      }
+    }, speed);
   }
-
 });

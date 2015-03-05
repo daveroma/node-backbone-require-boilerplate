@@ -1,21 +1,14 @@
-/*
-
-Home View
-
-*/
-
 define([
   'jquery',
   'underscore',
   'backbone',
-  'router',
-  'views/_manager',
-  'views/home_view',
-  'views/about_view',
-  'views/contact_view',
-  'views/ping_view'
-],
-function($, _, Backbone, Router, ViewManager, HomeView, AboutView, ContactView, PingView) {
+  'router',               // Backbone Router
+  'views/_manager',       // Handles page transitions and respective DOM/Event cleanup
+  'views/home_view',      // Backbone view for /home
+  'views/about_view',     // Backbone view for /about
+  'views/contact_view',   // Backbone view for /contact
+  'views/ping_view'       // Backbone view for /ping
+], function($, _, Backbone, Router, ViewManager, HomeView, AboutView, ContactView, PingView) {
 
   var BaseView = Backbone.View.extend({
 

@@ -18,7 +18,8 @@ require.config({
     jquery      : 'libs/jquery',
     underscore  : 'libs/underscore',
     backbone    : 'libs/backbone',
-    text        : 'libs/text'
+    text        : 'libs/text',
+    helpers     : 'helpers' // consider that this might not be in the right place
   },
 
   shim: {
@@ -28,6 +29,9 @@ require.config({
     'backbone'  : {
       deps      : ['underscore', 'jquery'],
       exports   : 'Backbone'
+    },
+    'helper': {
+       deps:['backbone']
     }
   },
 
