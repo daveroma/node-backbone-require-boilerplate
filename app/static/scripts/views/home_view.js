@@ -21,7 +21,7 @@ define([
       var self = this;
       console.log('homeView.js: render() was called');
       this.$el.html(this.homeTemplate);
-      setTimeout(self.typeOut(60), 2500);
+      setTimeout(self.typeOut(40), 2500);
       return this;
     },
 

@@ -10,10 +10,10 @@
 
 body, html {
 
-  font-weight: 400;
+  color: @ltgrey;
   font-family: @opensans;
-  color: @darkgrey;
-  background: @ltgrey;
+  font-weight: 100;
+  background: @black;
 
   * {
     transition: all 0.5s ease 0s;
@@ -35,17 +35,79 @@ textarea.form-control {
 }
 
 h1, h2, h3, h4, h5 {
-  font-weight: 300;
 }
 
 p, ul li {
-  font-size: 14px;
-  line-height: 28px;
 }
-
 
 a {
   text-decoration: dotted;
+}
+
+.video-container {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 700px;
+
+  video {
+    width: 100%;
+    opacity: 0.2;
+  }
+}
+
+.typeout {
+
+  margin-top: 100px;
+
+  > div {
+
+    margin-bottom: 30px;
+
+    span {
+      font-size: 32px;
+      color: #f2f2f2;
+      line-height: 80px;
+      display: none;
+      opacity: 0.6;
+    }
+
+  }
+
+  .visible {
+    display: inline !important;
+    visibility: visible !important;
+  }
+
+  .cursor {
+    font-size: 40px;
+    color: #fff;
+    display: inline-block;
+    opacity: 0.6;
+  }
+
+  .blink{
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+  }
+  @keyframes blink{
+    0% { opacity:0.8; }
+    50% { opacity:0.3; }
+    100% { opacity:0.8; }
+  }
+  @-webkit-keyframes blink{
+    0% { opacity:0.8; }
+    50% { opacity:0.3; }
+    100% { opacity:0.8; }
+  }
+  @-moz-keyframes blink{
+    0% { opacity:0.8; }
+    50% { opacity:0.3; }
+    100% { opacity:0.8; }
+  }
 }
 
 #nav {
@@ -68,7 +130,6 @@ a {
     }
 
   }
-
 }
 
 
