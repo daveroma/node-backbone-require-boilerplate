@@ -1,17 +1,18 @@
-/*
-
-Main application
-
-*/
-
-
-define(['router'], function(Router) {
+define([
+  'views/base_view',
+  'router'
+], function(BaseView, Router){
 
   var initialize = function(){
+
+    // init the base view
+    BaseView.initialize();
+
+    // init the router
     Router.initialize();
+
   }
 
-  // Expose methods to the main application
   return {
     initialize: initialize
   }

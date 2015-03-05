@@ -8,20 +8,20 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/home_view.html'
-],function($, _, Backbone, homeViewTemplate) {
+  'text!templates/ping_view.html'
+],function($, _, Backbone, pingViewTemplate) {
 
-  var HomeView = Backbone.View.extend({
+  var PingView = Backbone.View.extend({
 
-    id: 'home',
+    id: 'ping',
 
-    homeTemplate: _.template(homeViewTemplate),
+    pingTemplate: _.template(pingViewTemplate),
 
-    render: function(template){
+    render: function(){
       var self = this;
-      console.log('homeView.js: render() was called');
-      this.$el.html(this.homeTemplate);
-      setTimeout(self.typeOut(60), 2500);
+      console.log('pingView.js: render() was called');
+      this.$el.html(this.pingTemplate);
+      setTimeout(this.typeOut(60), 2500);
       return this;
     },
 
@@ -44,6 +44,6 @@ define([
   });
 
   // return the view to the main application
-  return HomeView;
+  return PingView;
 
 });

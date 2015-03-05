@@ -5,20 +5,29 @@ Main application
 */
 
 
-define(['jquery', 'underscore', 'backbone', 'views/home_view'], function($, _, Backbone, HomeView){
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'views/_manager' // this is where references to the Backbone views live
+], function($, _, Backbone, ViewManager, BaseView){
 
   var AppRouter = Backbone.Router.extend({
 
     routes: {
       ''          : 'index',
-      '/index'    : 'about',
-      '/about'    : 'about',
-      '*actions'  : ''
+      'index'     : 'about',
+      'ping'      : 'ping',
+      '*actions'  : 'index'
     },
 
     index: function() {
-      var homeView = new HomeView({el: $('#home')});
-      homeView.render();
+      // the showView method
+      ViewManager.showView(ViewManager.homeView);
+    },
+
+    ping: function() {
+      ViewManager.showView(ViewManager.pingView);
     }
 
   });

@@ -33,7 +33,13 @@ require.config({
 
 });
 
-// Start the main app logic.
 require(['app'], function (App) {
-  App.initialize();
+
+  $(function() {
+
+    // Start the main app logic.
+    App.initialize();
+
+  });
+
 });
